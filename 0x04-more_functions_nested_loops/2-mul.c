@@ -4,7 +4,7 @@
  * mul - question everything
  *
  * @a: parameter
- * #b: parameters
+ * @b: parameter
  * Return: a * b
  */
 
