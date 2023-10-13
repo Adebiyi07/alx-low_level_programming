@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * more_numbers(void) - function to print
+ * more_numbers - function to print numbers 0 to 14
  *
  * Return: returns 0
  */
