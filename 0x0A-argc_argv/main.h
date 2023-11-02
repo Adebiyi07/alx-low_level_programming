@@ -4,6 +4,6 @@
 #include <stdio.h>
 
 char _putchar(char c);
-int main(int argc, char*argv[]);
+int main(int argc, char *argv[]);
 
 #endif
