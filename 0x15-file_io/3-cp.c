@@ -5,6 +5,7 @@
  * error_file - checks if file is opened
  * @file_origin: file to copy from
  * @file_dest: file to paste into
+ * @argv: argument vector
  * Return:  0
  */
 
@@ -42,7 +43,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_origin = open(argv[1], O_RDONLY);
-	file_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	file_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0646);
 	error_file(file_origin, file_dest, argv);
 
 	numchars =  1024;
@@ -62,7 +63,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	err_close = close(file_dest);
-
 	if (err_close == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_dest);
