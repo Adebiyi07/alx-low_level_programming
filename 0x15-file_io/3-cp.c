@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_origin = open(argv[1], O_RDONLY);
-	file_dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	file_dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, mode);
 	error_file(file_origin, file_dest, argv);
 
 	numchars =  1024;
