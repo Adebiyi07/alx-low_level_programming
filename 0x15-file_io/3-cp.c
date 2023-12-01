@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 	int file_origin, file_dest, err_close;
 	ssize_t numchars, numwrite;
 	char buffer[1024];
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	file_origin = open(argv[1], O_RDONLY);
-	file_dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0646);
+	file_dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 	error_file(file_origin, file_dest, argv);
 
 	numchars =  1024;
